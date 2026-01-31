@@ -1,8 +1,17 @@
+"use client"
+
 import Link from "next/link";
-import {buttonVariants} from "@/components/ui/button";
+import {Button, buttonVariants} from "@/components/ui/button";
 import {ThemeToggle} from "@/components/web/theme-toggle";
+import {useConvexAuth} from "convex/react";
+import {authClient} from "@/lib/auth-client";
+import {toast} from "sonner";
+import {useRouter} from "next/navigation";
 
 const Navbar = () => {
+    const router = useRouter()
+    const {isAuthenticated, isLoading} = useConvexAuth();
+
     return (
         <header>
             <nav className={" w-full py-5 px-4 flex justify-between"}>
@@ -30,12 +39,37 @@ const Navbar = () => {
 
                 </div>
                 <div className={"gap-4 flex"}>
-                    <Link href="/auth/signup" className={buttonVariants()}>
-                        Sign Up
-                    </Link>
-                    <Link href="/auth/login" className={buttonVariants({variant: "outline"})}>
-                        Login
-                    </Link>
+                    {isLoading ? null : isAuthenticated ? (
+                        <Button
+                            onClick={() =>
+                                authClient.signOut({
+                                    fetchOptions: {
+                                        onSuccess: () => {
+                                            toast.success("Logged out successfully");
+                                            router.push("/");
+                                        },
+                                        onError: (error) => {
+                                            toast.error(error.error.message);
+                                        },
+                                    },
+                                })
+                            }
+                        >
+                            Logout
+                        </Button>
+                    ) : (
+                        <>
+                            <Link className={buttonVariants()} href="/auth/sign-up">
+                                Sign up
+                            </Link>
+                            <Link
+                                className={buttonVariants({variant: "outline"})}
+                                href="/auth/login"
+                            >
+                                Login
+                            </Link>
+                        </>
+                    )}
                     <ThemeToggle/>
                 </div>
             </nav>
