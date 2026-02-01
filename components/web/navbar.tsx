@@ -29,10 +29,10 @@ const Navbar = () => {
                         <Link href={"/"} className={buttonVariants({variant: "ghost"})}>
                             Home
                         </Link>
-                        <Link href={"/"} className={buttonVariants({variant: "ghost"})}>
+                        <Link href={"/blog"} className={buttonVariants({variant: "ghost"})}>
                             Blog
                         </Link>
-                        <Link href={"/"} className={buttonVariants({variant: "ghost"})}>
+                        <Link href={"/create"} className={buttonVariants({variant: "ghost"})}>
                             Create
                         </Link>
                     </div>
