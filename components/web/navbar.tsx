@@ -44,7 +44,7 @@ const Navbar = () => {
                             onClick={() =>
                                 authClient.signOut({
                                     fetchOptions: {
-                                        credentials: "same-origin",
+                                        credentials: "include",
                                         onSuccess: () => {
                                             toast.success("Logged out successfully");
                                             router.push("/");
