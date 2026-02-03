@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
                 hostname: "plus.unsplash.com",
                 protocol: "https",
                 port:""
+            },
+            {
+                hostname: "jovial-goshawk-903.convex.cloud",
+                protocol: "https",
+                port:""
             }
         ]
     }
