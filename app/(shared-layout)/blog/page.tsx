@@ -7,6 +7,8 @@ import {Suspense} from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 import Image from "next/image"
 
+export const dynamic= "force-static"
+export const revalidate= 30
 export default async function BlogPage(){
 
     return (
@@ -37,7 +39,7 @@ async function LoadBlogPost(){
                             <h1 className={"text-2xl font-bold hover:text-primary"}>{post.title}</h1>
 
                         </Link>
-                        <p className={"text-muted-foreground text-wrap max-w-20  leading-tight "}>{post.body}
+                        <p className={"text-muted-foreground text-wrap  leading-tight "}>
                             {post.body}
                         </p>
                     </CardContent>
