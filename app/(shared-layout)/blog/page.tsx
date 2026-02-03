@@ -8,8 +8,7 @@ import {Skeleton} from "@/components/ui/skeleton";
 import Image from "next/image"
 import {connection} from "next/server";
 
-export const dynamic= "force-static"
-export const revalidate= 30
+
 export default async function BlogPage(){
 
     return (
