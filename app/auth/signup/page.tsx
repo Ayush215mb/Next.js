@@ -47,8 +47,6 @@ const SignUpPage = () => {
                 }
             })
         })
-
-
     }
 
     return (

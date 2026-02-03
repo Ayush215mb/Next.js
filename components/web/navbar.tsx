@@ -59,7 +59,7 @@ const Navbar = () => {
                         </Button>
                     ) : (
                         <>
-                            <Link className={buttonVariants()} href="/auth/sign-up">
+                            <Link className={buttonVariants()} href="/auth/signup">
                                 Sign up
                             </Link>
                             <Link
