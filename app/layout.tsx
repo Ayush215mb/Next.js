@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "Blog App",
     description: "A place to share your thoughts",
+    authors:[{name:"Ayush Yadav",url:"https://www.glevoidd.in/"}]
 };
 
 export default function RootLayout({children,}: Readonly<{

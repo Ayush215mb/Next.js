@@ -7,7 +7,14 @@ import {Suspense} from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 import Image from "next/image"
 import {connection} from "next/server";
+import {Metadata} from "next";
 
+export const metadata: Metadata= {
+    title:"Blog Page",
+    description:"Read our latest articles and insights",
+    category:"Blog",
+    authors:[{name: "ayush215mb"}]
+}
 
 export default async function BlogPage(){
 
