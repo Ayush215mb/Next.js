@@ -6,6 +6,7 @@ import {fetchQuery} from "convex/nextjs";
 import {Suspense} from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 import Image from "next/image"
+import {connection} from "next/server";
 
 export const dynamic= "force-static"
 export const revalidate= 30
@@ -24,6 +25,9 @@ export default async function BlogPage(){
     )
 }
 async function LoadBlogPost(){
+
+    await connection()
+
     const data= await fetchQuery(api.posts.getPosts)
 
     return (
