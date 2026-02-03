@@ -29,7 +29,6 @@ export const createAuth = (ctx: GenericCtx<DataModel>) => {
         secret: secret
     })
 }
-
 // Example function for getting the current user
 // Feel free to edit, omit, etc.
 export const getCurrentUser = query({
