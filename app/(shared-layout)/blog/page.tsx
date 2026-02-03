@@ -9,6 +9,10 @@ import Image from "next/image"
 import {connection} from "next/server";
 import {Metadata} from "next";
 
+export const dynamic = "force-static";
+export const revalidate= 30;
+
+
 export const metadata: Metadata= {
     title:"Blog Page",
     description:"Read our latest articles and insights",
